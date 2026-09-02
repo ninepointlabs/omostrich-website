@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Omostrich — a friendly guard for your Nostr key</title>
+<meta name="description" content="Omostrich is a little bar icon for the Omarchy desktop that locks up your Nostr key and posts notes for you — without ever handing the key to anyone, even you.">
+<link rel="icon" type="image/png" href="assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta property="og:title" content="Omostrich">
+<meta property="og:description" content="A friendly guard for your Nostr key, built for the Omarchy desktop.">
+<meta property="og:image" content="assets/img/og-icon-512.png">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="header">
+  <div class="wrap">
+    <div class="header__brand">
+      <img class="header__mark" src="assets/img/ostrich.png" alt="" width="48" height="48">
+      <span class="header__name">Omostrich</span>
+    </div>
+
+    <pre class="hero__logo" aria-hidden="true">  .g8""8q. `7MMM.     ,MMF' .g8""8q.    .M"""bgd MMP""MM""YMM `7MM"""Mq.  `7MMF' .g8"""bgd `7MMF'  `7MMF'
+.dP'    `YM. MMMb    dPMM .dP'    `YM. ,MI    "Y P'   MM   `7   MM   `MM.   MM .dP'     `M   MM      MM
+dM'      `MM M YM   ,M MM dM'      `MM `MMb.          MM        MM   ,M9    MM dM'       `   MM      MM
+MM        MM M  Mb  M' MM MM        MM   `YMMNq.      MM        MMmmdM9     MM MM            MMmmmmmmMM
+MM.      ,MP M  YM.P'  MM MM.      ,MP .     `MM      MM        MM  YM.     MM MM.           MM      MM
+`Mb.    ,dP' M  `YM'   MM `Mb.    ,dP' Mb     dM      MM        MM   `Mb.   MM `Mb.     ,'   MM      MM
+  `"bmmd"' .JML. `'  .JMML. `"bmmd"'   P"Ybmmd"     .JMML.    .JMML. .JMM..JMML. `"bmmmd'  .JMML.  .JMML.</pre>
+
+    <p class="hero__tagline">A little ostrich that guards your Nostr key — and never, ever hands it over.</p>
+    <p class="hero__sub">Omostrich is one icon in the bar of your <a href="https://omarchy.org">Omarchy</a> desktop. Click it to unlock, write a short note, and send it out to Nostr. That's the whole idea.</p>
+
+    <nav class="nav" aria-label="Page sections">
+      <a class="button" href="#what">What is Nostr?</a>
+      <a class="button" href="#does">What it does</a>
+      <a class="button" href="#safe">How it stays safe</a>
+      <a class="button" href="#db">Omostrich‑DB</a>
+      <a class="button" href="#install">Install</a>
+      <a class="button button--ghost" href="https://github.com/ninepointlabs/omostrich">GitHub ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+
+    <section class="section" id="what">
+      <p class="section__eyebrow">Let's start simple</p>
+      <h2 class="section__title">So... what even is this thing?</h2>
+      <p class="section__lede">
+        Imagine you have a diary, but instead of hiding it under your bed, you
+        want to shout a page of it out loud so anyone in the world can read
+        it. <strong>Nostr</strong> is a place on the internet where people do
+        exactly that — they post short notes that show up on lots of
+        different apps at once, kind of like a walkie-talkie channel anyone
+        can tune into.
+      </p>
+
+      <div class="kid-box">
+        <p class="kid-box__label">Explain it like I'm eight</p>
+        <p>
+          To prove a note on Nostr is really from <em>you</em> and not someone
+          pretending to be you, you get a special secret key — like a
+          magic stamp only you own. Every note you send gets stamped with
+          it. The tricky part: if anyone else ever sees your stamp, they
+          can pretend to be you forever. So the stamp has to stay locked
+          up, always.
+        </p>
+        <p>
+          <strong>Omostrich is the locked box that holds your stamp for
+          you.</strong> You never carry the stamp around loose in your
+          pocket. You ask Omostrich to stamp a note, it does the stamping
+          <em>inside the box</em>, and only the finished, stamped note comes
+          back out.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="does">
+      <p class="section__eyebrow">The bar icon</p>
+      <h2 class="section__title">What Omostrich actually does</h2>
+      <p class="section__lede">
+        One ostrich icon lives in your Omarchy bar. It dims when its little
+        guard-robot (the "daemon") isn't running, and it wears a small red
+        badge when something needs your yes-or-no.
+      </p>
+
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card__icon">🔐</div>
+          <h3>Unlock with a password</h3>
+          <p>You paste in your secret key once, ever. After that, just a
+          passphrase unlocks the box — for 5 minutes, 30 minutes, up to a
+          full day, your choice.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon">📝</div>
+          <h3>Write and send a note</h3>
+          <p>A text box that grows as you type. Press Enter to post. It
+          tells you exactly which mailboxes (relays) actually got your
+          note, not just a vague "done."</p>
+        </div>
+        <div class="card">
+          <div class="card__icon">🖼️</div>
+          <h3>Attach a picture</h3>
+          <p>Paste an image, pick a file, or grab one from your clipboard.
+          Omostrich uploads it and drops the link into your note for you.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon">🪪</div>
+          <h3>Show who you are</h3>
+          <p>Once unlocked, the icon shows your name and picture — so you
+          always know which "you" you're posting as.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon">🔔</div>
+          <h3>Gentle alerts</h3>
+          <p>A quiet pop-up when someone mentions you, messages you, or
+          sends a tip — it never peeks inside a private message to make
+          the alert, it just says "you got one."</p>
+        </div>
+        <div class="card">
+          <div class="card__icon">🤝</div>
+          <h3>Sign for other apps, carefully</h3>
+          <p>Other Nostr apps can ask Omostrich to sign things on your
+          behalf (this is called <strong>NIP-46</strong>). You see exactly
+          what's being asked and approve or deny it — nothing happens
+          blindly.</p>
+        </div>
+      </div>
+
+      <p class="hero__sub" style="margin-top: var(--space-lg); text-align: left; max-width: none;">
+        There's also a shortcut: press <code>SUPER + N</code> anywhere on
+        your desktop and a tiny compose box pops up, already to ready to
+        type — no clicking through the bar first.
+      </p>
+
+      <h3 class="section__title" style="font-size: 1.2em; margin-top: var(--space-xl);">What Omostrich will <em>not</em> do</h3>
+      <ul class="not-list">
+        <li>It does not show you a feed or a timeline — no scrolling, no reading other people's notes here.</li>
+        <li>It does not open your messages for you — alerts just say "something arrived," they don't decrypt it.</li>
+        <li>It does not hold more than one key at a time — one box, one identity, on purpose.</li>
+        <li>It does not let any app sign things without asking you first, every time something new is requested.</li>
+      </ul>
+    </section>
+
+    <section class="section" id="safe">
+      <p class="section__eyebrow">The important part</p>
+      <h2 class="section__title">How it keeps your secret key safe</h2>
+      <p class="section__lede">
+        This is the whole reason Omostrich exists, so here it is in plain
+        words — followed by what's actually happening under the hood for
+        anyone who wants the details.
+      </p>
+
+      <div class="steps">
+        <div class="step">
+          <h3>Your key is locked in a digital safe</h3>
+          <p><strong>Kid version:</strong> your secret stamp gets turned into
+          a jumble of nonsense that only your passphrase can unjumble.</p>
+          <p><strong>Under the hood:</strong> the key is encrypted at rest
+          with AES-256-GCM, using a key derived from your passphrase via
+          scrypt with a deliberately expensive work factor — that makes
+          guessing your passphrase against a stolen file slow and costly.</p>
+        </div>
+        <div class="step">
+          <h3>Only one program ever opens the safe</h3>
+          <p><strong>Kid version:</strong> one small guard-robot (a
+          background helper called the daemon) is the only thing allowed to
+          unlock the box, and only while you've told it to stay unlocked.</p>
+          <p><strong>Under the hood:</strong> the bar widget is Quickshell
+          QML — it never imports, decrypts, or even touches the key. Every
+          action shells out to a small control command and reads back a
+          plain response.</p>
+        </div>
+        <div class="step">
+          <h3>Locked means locked, no exceptions</h3>
+          <p><strong>Kid version:</strong> if the box is shut, nothing gets
+          stamped — not even a tiny bit, not even "just this once."</p>
+          <p><strong>Under the hood:</strong> every signing path checks the
+          unlock state first and refuses outright if it isn't unlocked.
+          There's no cached signature and no back door.</p>
+        </div>
+        <div class="step">
+          <h3>Nobody can peek over its shoulder</h3>
+          <p><strong>Kid version:</strong> the secret key is never written
+          down somewhere a nosy program could spot it.</p>
+          <p><strong>Under the hood:</strong> secrets are never passed as
+          command-line arguments (which any other process on your machine
+          could read) — they're piped in over standard input instead, and
+          this was verified by actually inspecting a running process.</p>
+        </div>
+        <div class="step">
+          <h3>It writes down what it did — never the secret itself</h3>
+          <p><strong>Kid version:</strong> the guard-robot keeps a logbook of
+          "I stamped this note at this time," but it never writes the
+          stamp itself in the book.</p>
+          <p><strong>Under the hood:</strong> an audit log records event
+          kind, event id, a truncated content hash, and length for every
+          signature — never the key, never the passphrase.</p>
+        </div>
+        <div class="step">
+          <h3>It locks itself back up if you forget</h3>
+          <p><strong>Kid version:</strong> leave it alone for a while and the
+          box quietly closes on its own.</p>
+          <p><strong>Under the hood:</strong> it auto-locks after your
+          configured idle window, and runs as a sandboxed systemd user
+          service with core dumps disabled, a read-only home directory,
+          and write access limited to exactly the two folders it needs.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="db">
+      <p class="section__eyebrow">A sibling project</p>
+      <h2 class="section__title">Meet Omostrich‑DB</h2>
+      <div class="db-panel">
+        <span class="db-panel__badge">Optional</span>
+        <div>
+          <p>
+            <strong>Kid version:</strong> imagine a little notebook that sits
+            next to the safe and keeps count — "you posted 4 notes this
+            week, and 12 people liked one of them." It never opens the safe.
+            It never sees your stamp. It just counts things that were
+            already made public.
+          </p>
+          <p style="margin-top: var(--space-sm);">
+            <strong>Under the hood:</strong>
+            <a href="https://github.com/ninepointlabs/omostrich-db">Omostrich‑DB</a>
+            is a separate, read-only helper. A background process watches
+            relays for your own notes and the replies, reactions, and tips
+            that mention you, and stores them in a local, private database
+            (nostrdb) on your own machine — so questions like "how many
+            times did I post this week" answer instantly, without asking
+            the internet each time. It only ever needs your <em>public</em>
+            identity — never your key, never your passphrase, and it keeps
+            working even if Omostrich itself is locked.
+          </p>
+          <p style="margin-top: var(--space-sm);">
+            It's entirely optional — Omostrich works completely on its own
+            without it.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section install" id="install">
+      <p class="section__eyebrow">For grown-ups</p>
+      <h2 class="section__title">Installing it on Omarchy</h2>
+      <p class="section__lede">
+        Requires <a href="https://nodejs.org">Node.js</a> and the
+        <a href="https://omarchy.org">Omarchy</a> desktop.
+      </p>
+
+      <pre><code>git clone https://github.com/ninepointlabs/omostrich ~/Projects/omostrich
+cd ~/Projects/omostrich
+npm ci                 # installs exactly what's pinned in package-lock.json
+./install.sh           # installs + starts the systemd --user service
+cd plugin
+./install.sh           # deploys the bar widget + Super+N overlay</code></pre>
+
+      <p class="install__note">
+        Then open the new ostrich icon in your bar, paste in your key once,
+        set a passphrase, and you're set up. Full details, including the
+        optional <code>SUPER + N</code> keybinding and how to connect an AI
+        agent's explicit-ask-only posting access, live in the
+        <a href="https://github.com/ninepointlabs/omostrich#readme">project README</a>.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>What</th><th>Where it lives</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Source code</td><td><a href="https://github.com/ninepointlabs/omostrich">github.com/ninepointlabs/omostrich</a></td></tr>
+            <tr><td>Optional stats helper</td><td><a href="https://github.com/ninepointlabs/omostrich-db">github.com/ninepointlabs/omostrich-db</a></td></tr>
+            <tr><td>Encrypted vault</td><td><code>~/.local/share/omostrich/</code></td></tr>
+            <tr><td>Plugin id</td><td><code>tim.omostrich</code></td></tr>
+            <tr><td>License</td><td>MIT</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <div>
+      <p>Omostrich is free, open-source software for the
+      <a href="https://omarchy.org">Omarchy</a> desktop.</p>
+      <p style="margin-top: 0.4em;">MIT licensed. Made by
+      <a href="https://github.com/ninepointlabs">ninepointlabs</a>.</p>
+    </div>
+    <div>
+      <p><a href="https://github.com/ninepointlabs/omostrich">Omostrich on GitHub ↗</a></p>
+      <p style="margin-top: 0.4em;"><a href="https://github.com/ninepointlabs/omostrich-db">Omostrich‑DB on GitHub ↗</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
