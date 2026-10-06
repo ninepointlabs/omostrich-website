@@ -253,6 +253,33 @@ MM.      ,MP M  YM.P'  MM MM.      ,MP .     `MM      MM        MM  YM.     MM M
       </div>
     </section>
 
+    <section class="section" id="projects">
+      <p class="section__eyebrow">Built on Omostrich</p>
+      <h2 class="section__title">Quill</h2>
+      <p class="section__lede">
+        <strong>Kid version:</strong> imagine you're at the park and want to
+        send a note home — but your special stamp is on your desk. Quill is
+        a little phone app that asks Omostrich (through a secret tunnel) to
+        stamp the note for you, then sends it out. The stamp never leaves
+        the desk.
+      </p>
+      <p style="margin-top: var(--space-sm);">
+        <strong>Under the hood:</strong>
+        <a href="https://github.com/ninepointlabs/quill">Quill</a>
+        is an Android Nostr client with a full feed, threads, reply context,
+        and inline media — but its signing key lives on your desktop, only
+        reachable over Tailscale. The phone builds the event, tunnels it to
+        Omostrich over an encrypted WireGuard link, and Omostrich signs it
+        with the key it already holds. The nsec is never on the mobile device.
+      </p>
+      <p style="margin-top: var(--space-sm);">
+        It's built on nostrdb (embedded via Rust/NDK), Compose with the
+        Omarchy design language, and Omostrich's line‑delimited JSON TCP
+        protocol.
+        <a href="https://github.com/ninepointlabs/quill">View on GitHub ↗</a>
+      </p>
+    </section>
+
     <section class="section install" id="install">
       <p class="section__eyebrow">For grown-ups</p>
       <h2 class="section__title">Installing it on Omarchy</h2>
