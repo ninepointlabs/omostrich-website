@@ -133,12 +133,15 @@ pre code {
 
 .header__mark {
   height: 2.4em;
+  object-fit: contain;
   width: 2.4em;
 }
 
 .header__name {
   color: var(--c-white);
   font-size: 1.4em;
+  line-height: inherit;
+  margin: 0;
   font-weight: 700;
   letter-spacing: 0.02em;
   text-transform: uppercase;

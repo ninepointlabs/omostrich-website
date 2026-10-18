@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://omostrich.com/sitemap.xml
