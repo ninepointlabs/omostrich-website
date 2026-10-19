@@ -475,6 +475,11 @@ td {
   color: var(--c-white);
 }
 
+.footer .social { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 14px; margin: 12px 0; }
+.footer .social a { display: inline-flex; color: rgb(var(--rgb-terminal-white) / 0.75); }
+.footer .social a:hover, .footer .social a:focus-visible { color: var(--c-white); }
+.footer .social svg { width: 18px; height: 18px; fill: currentColor; }
+
 .skip-link {
   left: -999px;
   position: absolute;
